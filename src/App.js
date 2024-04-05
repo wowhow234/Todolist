@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Hello from "./Hello";
 import TodoEdit from "./TodoEdit";
+import Toggle from "./Toggle";
+import UseEffectPrac from "./useEffect";
 
 function App() {
   const [todo, setTodo] = useState();
@@ -42,8 +44,9 @@ function App() {
   // checkbox에 value를 주는 대신에 id를 인자로 줘서 id값이 들어있는 input을 찾는거구나..
 
   const onDelete = (id) => {
-    setTodoList(todoList.filter((item) => item.id !== id));
-    console.log("남아있는 todolist----", todoList);
+    const removedTodoList = todoList.filter((item) => item.id !== id);
+    setTodoList(removedTodoList);
+    console.log("남아있는 todolist----", removedTodoList);
   };
 
   return (
@@ -66,11 +69,12 @@ function App() {
               <button type="button" onClick={() => onDelete(item.id)}>
                 삭제
               </button>
-              <TodoEdit />
+              <TodoEdit setTodo={setTodo} todoList={todoList} todo={todo} />
             </div>
           ))}
         </div>
       </form>
+      <UseEffectPrac />
     </div>
   );
 }
