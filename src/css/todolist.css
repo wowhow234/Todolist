@@ -1,0 +1,8 @@
+.todospan {
+  color: blueviolet;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: gray;
+}

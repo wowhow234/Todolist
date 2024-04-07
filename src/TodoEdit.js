@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const TodoEdit = ({ setTodo, todoList, todo }) => {
+const TodoEdit = ({ setTodoList, todoList, todoListId }) => {
   const [isEdit, setIsEdit] = useState(false);
   const [isContent, setIsContent] = useState();
 
@@ -13,16 +13,23 @@ const TodoEdit = ({ setTodo, todoList, todo }) => {
 
   const onEdit = () => {
     setIsEdit(true);
-    console.log("수정하기 버튼 클릭!!---isEdit---", isEdit);
+    console.log("-----아이디 찾자.....", todoListId);
+    // console.log("수정하기 버튼 클릭!!---isEdit---", isEdit);
   };
 
-  const onEditYes = (id) => {
+  const onEditYes = () => {
     const newEditTodoList = todoList.map((item) =>
-      item.id === id ? { ...item, todo: isContent } : item
+      item.id === todoListId ? { ...item, todo: isContent } : item
     );
-    setTodo(newEditTodoList);
+    // setTodoList(
+    //   todoList.map((item) =>
+    //     item.id === todoListId ? { ...item, todo: isContent } : item
+    //   )
+    // );
+    setTodoList(newEditTodoList);
     setIsEdit(false);
-    console.log("수정 완---투두리스트뜨나??", newEditTodoList);
+    console.log("수정 완---NEW투두리스트뜨나??", newEditTodoList);
+    console.log("-----수정내용----->", isContent);
   };
 
   const onEditNo = () => {
