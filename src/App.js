@@ -70,10 +70,11 @@ function App() {
                 type="checkbox"
                 onChange={() => onCheck(item.id)}
                 value={item.checked}
-                // onClick={onClickCheckbox}
               />
               {/* <span className={` ${item.checked ? "checked" : "todospan"}`}> */}
-              <span>{item.todo}</span>
+              <span className={` ${item.checked ? "checked" : "todospan"}`}>
+                {item.todo}
+              </span>
               <button type="button" onClick={() => onDelete(item.id)}>
                 삭제
               </button>
