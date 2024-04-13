@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Hello from "./Hello";
 import TodoEdit from "./TodoEdit";
 import "./css/todolist.css";
+import "./css/common.css";
 
 function App() {
   const [todo, setTodo] = useState();
@@ -52,20 +52,22 @@ function App() {
   };
 
   return (
-    <div>
-      <Hello />
-      todolist 만들기
+    <div className="wrapper">
+      <div className="title">To-do LIST</div>
+      <div className="subtitle">할 일을 입력하세요</div>
       <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          placeholder="할 일을 입력하세요"
-          onChange={onChange}
-          value={todo || ""}
-        ></input>
-        <button>등록하기</button>
-        <div>
+        <div className="inputbox">
+          <input
+            type="text"
+            placeholder="할 일을 입력하세요"
+            onChange={onChange}
+            value={todo || ""}
+          ></input>
+          <button className="submit-button">등록하기</button>
+        </div>
+        <div className="todolist">
           {todoList.map((item) => (
-            <div key={item.id}>
+            <div key={item.id} className="todo">
               <input
                 type="checkbox"
                 onChange={() => onCheck(item.id)}
@@ -75,14 +77,21 @@ function App() {
               <span className={` ${item.checked ? "checked" : "todospan"}`}>
                 {item.todo}
               </span>
-              <button type="button" onClick={() => onDelete(item.id)}>
-                삭제
-              </button>
-              <TodoEdit
-                setTodoList={setTodoList}
-                todoList={todoList}
-                todoListId={item.id}
-              />
+              <div className="buttons">
+                <button
+                  className="delete-button"
+                  type="button"
+                  onClick={() => onDelete(item.id)}
+                >
+                  삭제
+                </button>
+                <TodoEdit
+                  className="edit-button"
+                  setTodoList={setTodoList}
+                  todoList={todoList}
+                  todoListId={item.id}
+                />
+              </div>
             </div>
           ))}
         </div>

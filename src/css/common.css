@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap");
+.title {
+  font-size: 30px;
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 10px 0;
+}
+
+.subtitle {
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+body {
+  background-color: beige;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.black-han sans-regular {
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.wrapper {
+  border: 1px solid black;
+  margin: 100px auto 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+form {
+  border: 1px solid red;
+}
+
+.inputbox {
+  display: flex;
+  align-items: center;
+  border: 1px solid seagreen;
+  margin: 10px 0;
+}
+.inputbox input {
+  width: 300px;
+  height: 30px;
+  border-style: none;
+  background-color: plum;
+}
+.inputbox input::-moz-placeholder {
+  color: rgb(103, 5, 72);
+  font-weight: 500;
+}
+.inputbox input::placeholder {
+  color: rgb(103, 5, 72);
+  font-weight: 500;
+}
+.inputbox input:focus {
+  outline: 3px solid blueviolet;
+}
+
+.todolist {
+  display: flex;
+  width: 250px;
+  margin: 0 auto;
+  align-items: stretch;
+  flex-direction: column;
+}
+.todolist .todo {
+  border: 1px salmon solid;
+  background-color: rgb(242, 204, 192);
+  margin: 5px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit-button,
+.delete-button,
+.edit-button {
+  margin: 0 5px;
+}
+
+button {
+  background-color: chartreuse;
+  border: none;
+  width: 70px;
+  height: 30px;
+  border-radius: 10px;
+}/*# sourceMappingURL=common.css.map */

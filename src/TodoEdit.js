@@ -44,7 +44,7 @@ const TodoEdit = ({ setTodoList, todoList, todoListId }) => {
   };
 
   return (
-    <div>
+    <>
       {isEdit ? (
         <>
           <textarea onChange={onChange} value={isContent}></textarea>
@@ -60,7 +60,7 @@ const TodoEdit = ({ setTodoList, todoList, todoListId }) => {
           수정하기
         </button>
       )}
-    </div>
+    </>
   );
 };
 
