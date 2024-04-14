@@ -68,15 +68,18 @@ function App() {
         <div className="todolist">
           {todoList.map((item) => (
             <div key={item.id} className="todo">
-              <input
-                type="checkbox"
-                onChange={() => onCheck(item.id)}
-                value={item.checked}
-              />
-              {/* <span className={` ${item.checked ? "checked" : "todospan"}`}> */}
-              <span className={` ${item.checked ? "checked" : "todospan"}`}>
-                {item.todo}
-              </span>
+              <div className="todo-upper">
+                <input
+                  type="checkbox"
+                  onChange={() => onCheck(item.id)}
+                  value={item.checked}
+                  id="todo_check"
+                />
+                {/* <span className={` ${item.checked ? "checked" : "todospan"}`}> */}
+                <span className={` ${item.checked ? "checked" : "todospan"}`}>
+                  {item.todo}
+                </span>
+              </div>
               <div className="buttons">
                 <button
                   className="delete-button"

@@ -1,23 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap");
 .title {
-  font-size: 30px;
+  font-size: 80px;
   font-family: "Black Han Sans", sans-serif;
   font-weight: 400;
   font-style: normal;
   margin: 10px 0;
+  color: rgb(127, 0, 104);
 }
 
 .subtitle {
-  font-size: 15px;
+  font-size: 30px;
   margin: 5px 0;
+  color: rgb(127, 0, 104);
+  border-top: 1px dotted rgb(129, 129, 129);
 }
 
 body {
-  background-color: beige;
+  background-color: rgba(255, 230, 251, 0.52);
   font-family: "Noto Sans KR", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  font-size: 20px;
 }
 
 .black-han sans-regular {
@@ -27,52 +31,72 @@ body {
 }
 
 .wrapper {
-  border: 1px solid black;
-  margin: 100px auto 0;
+  margin: 100px 200px;
+  padding: 30px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  border: 2px solid white;
+  background-color: #ffffff;
 }
 
 form {
-  border: 1px solid red;
+  box-shadow: 0px 0px 10px 3px rgba(128, 128, 128, 0.1882352941);
+  background-color: rgba(245, 226, 255, 0.2588235294);
+  margin: 10px 0 10px;
+  width: 450px;
 }
 
 .inputbox {
   display: flex;
   align-items: center;
-  border: 1px solid seagreen;
+  justify-content: center;
   margin: 10px 0;
 }
 .inputbox input {
   width: 300px;
   height: 30px;
   border-style: none;
-  background-color: plum;
+  background: radial-gradient(circle, #edc9ff, rgba(0, 0, 255, 0));
+  padding-left: 10px;
 }
 .inputbox input::-moz-placeholder {
-  color: rgb(103, 5, 72);
+  color: rgb(127, 0, 104);
   font-weight: 500;
 }
 .inputbox input::placeholder {
-  color: rgb(103, 5, 72);
+  color: rgb(127, 0, 104);
   font-weight: 500;
 }
 .inputbox input:focus {
-  outline: 3px solid blueviolet;
+  outline: 2px solid rgb(247, 179, 244);
+  border-radius: 10px;
 }
 
 .todolist {
   display: flex;
-  width: 250px;
+  width: 300px;
   margin: 0 auto;
   align-items: stretch;
   flex-direction: column;
 }
 .todolist .todo {
-  border: 1px salmon solid;
-  background-color: rgb(242, 204, 192);
+  background-color: #ffdffc;
   margin: 5px 0;
+  padding: 5px;
+  border-radius: 10px;
+}
+.todolist .todo-upper {
+  display: flex;
+}
+.todolist .todo-upper span {
+  margin-left: 5px;
+}
+.todolist input[type=checkbox] {
+  width: 1.25em;
+  height: 1.25em;
+  vertical-align: middle;
+  accent-color: rgb(174, 92, 212);
 }
 
 .buttons {
@@ -87,9 +111,10 @@ form {
 }
 
 button {
-  background-color: chartreuse;
+  background-color: #ffffff;
   border: none;
   width: 70px;
   height: 30px;
   border-radius: 10px;
+  text-align: center;
 }/*# sourceMappingURL=common.css.map */
