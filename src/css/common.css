@@ -99,15 +99,9 @@ form {
   accent-color: rgb(174, 92, 212);
 }
 
-.buttons {
+.todo-lower {
   display: flex;
   justify-content: flex-end;
-}
-
-.submit-button,
-.delete-button,
-.edit-button {
-  margin: 0 5px;
 }
 
 button {
@@ -117,4 +111,5 @@ button {
   height: 30px;
   border-radius: 10px;
   text-align: center;
+  margin: 0 5px;
 }/*# sourceMappingURL=common.css.map */

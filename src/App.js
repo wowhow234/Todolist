@@ -16,7 +16,6 @@ function App() {
     if (todo === "") {
       return alert("할 일을 입력하세요");
     }
-    // console.log("-----submit-----");
     // console.log("새로 등록한 할 일----->", todo);
     const newTodoList = todoList.concat({
       id: Date.now(),
@@ -29,11 +28,10 @@ function App() {
   };
 
   useEffect(() => {
-    // console.log("할 일 창 활성화 중...", todo);
+    // console.log("할 일 창 활성화 중...");
   }, [todo, todoList]);
 
   const onCheck = (id) => {
-    console.log("------e-----", id);
     const testTodo = todoList.map(
       (item) => (item.id === id ? { ...item, checked: !item.checked } : item)
       // ({
@@ -42,13 +40,13 @@ function App() {
       // })
     );
     setTodoList(testTodo);
-    console.log("----일단todolist에 접근해보기---", testTodo);
+    // console.log("-----check 후 todolist?----->", testTodo);
   };
 
   const onDelete = (id) => {
     const removedTodoList = todoList.filter((item) => item.id !== id);
     setTodoList(removedTodoList);
-    console.log("남아있는 todolist----", removedTodoList);
+    // console.log("삭제 후 todolist---->", removedTodoList);
   };
 
   return (
@@ -63,7 +61,7 @@ function App() {
             onChange={onChange}
             value={todo || ""}
           ></input>
-          <button className="submit-button">등록하기</button>
+          <button>등록하기</button>
         </div>
         <div className="todolist">
           {todoList.map((item) => (
@@ -75,21 +73,15 @@ function App() {
                   value={item.checked}
                   id="todo_check"
                 />
-                {/* <span className={` ${item.checked ? "checked" : "todospan"}`}> */}
                 <span className={` ${item.checked ? "checked" : "todospan"}`}>
                   {item.todo}
                 </span>
               </div>
-              <div className="buttons">
-                <button
-                  className="delete-button"
-                  type="button"
-                  onClick={() => onDelete(item.id)}
-                >
+              <div className="todo-lower">
+                <button type="button" onClick={() => onDelete(item.id)}>
                   삭제
                 </button>
                 <TodoEdit
-                  className="edit-button"
                   setTodoList={setTodoList}
                   todoList={todoList}
                   todoListId={item.id}
