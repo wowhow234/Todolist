@@ -52,7 +52,7 @@ function App() {
   return (
     <div className="wrapper">
       <div className="title">To-do LIST</div>
-      <div className="subtitle">할 일을 입력하세요</div>
+      <div className="subtitle">투두리스트를 만들어 보았습니다</div>
       <form onSubmit={onSubmit}>
         <div className="inputbox">
           <input
